@@ -129,3 +129,4 @@ data
 *.pkl
 /tournament/result
 /tournament/config.ini
+.log
