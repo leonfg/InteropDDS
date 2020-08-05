@@ -145,7 +145,7 @@
                <ordered_access>false</ordered_access>
           </presentation>
           <partition>
-               <name></name>
+               <name>"HelloWorld Partition"</name>
           </partition>
           <group_data>
                <value></value>
@@ -161,7 +161,7 @@
                <ordered_access>false</ordered_access>
           </presentation>
           <partition>
-               <name></name>
+               <name>"HelloWorld Partition"</name>
           </partition>
           <group_data>
                <value></value>
