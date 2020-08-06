@@ -6,7 +6,6 @@ import time
 import ddsutil
 
 
-# Listener类
 class DataAvailableListener(Listener):
     def __init__(self):
         Listener.__init__(self)
@@ -26,15 +25,13 @@ if __name__ == "__main__":
 
     sub = dp.create_subscriber(qos = qp.get_subscriber_qos())
 
-    gen_info = ddsutil.get_dds_classes_from_idl('HelloWorldData.idl', 'HelloWorldData::Msg')
+    gen_info = ddsutil.get_dds_classes_from_idl('example1.idl', 'Sample::DataTypesList::DataTypes')
 
-    topic = gen_info.register_topic(dp, 'HelloWorldData_Msg', qp.get_topic_qos())
+    topic = gen_info.register_topic(dp, 'Example', qp.get_topic_qos())
 
     readerQos = qp.get_reader_qos()
-
     reader = sub.create_datareader(topic, readerQos)
-
-    # reader2 = sub.create_datareader(topic, readerQos, DataAvailableListener())
+    reader2 = sub.create_datareader(topic, readerQos, DataAvailableListener())
 
     waitset = WaitSet()
     rc = ReadCondition(reader, DDSMaskUtil.all_samples())

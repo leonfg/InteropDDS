@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dds xmlns="http://www.omg.org/dds/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="file:DDS_QoSProfile.xsd">
-<qos_profile name="DDS DefaultQosProfile">
+<qos_profile name="DDS TestQosProfile">
      <datareader_qos>
           <durability>
                  <kind>VOLATILE_DURABILITY_QOS</kind>
@@ -145,7 +145,7 @@
                <ordered_access>false</ordered_access>
           </presentation>
           <partition>
-               <name></name>
+               <name>"HelloWorld Partition"</name>
           </partition>
           <group_data>
                <value></value>
@@ -175,7 +175,7 @@
                <value></value>
           </topic_data>
           <durability>
-               <kind>VOLATILE_DURABILITY_QOS</kind>
+               <kind>TRANSIENT_DURABILITY_QOS</kind>
           </durability>
           <durability_service>
                <service_cleanup_delay>
@@ -208,7 +208,7 @@
                </lease_duration>
           </liveliness>
           <reliability>
-               <kind>BEST_EFFORT_RELIABILITY_QOS</kind>
+               <kind>RELIABLE_RELIABILITY_QOS</kind>
                <max_blocking_time>
                     <sec>0</sec>
                     <nanosec>100000000</nanosec>

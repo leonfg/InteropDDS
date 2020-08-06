@@ -1,0 +1,28 @@
+module Sample{
+
+    module DataTypesList
+    {
+        struct Inner
+        {
+			short short1;
+			double double1;
+        };
+        enum Color
+        {
+            Red,
+            Green,
+            Blue
+        };
+        struct DataTypes
+        {
+            long longValue;
+            boolean booleanValue;
+            char charValue;
+            string stringValue;
+            Sequence<Inner> seq1;
+            Color color1;
+        };
+        #pragma keylist DataTypes longValue
+    };
+
+}; // module Sample
