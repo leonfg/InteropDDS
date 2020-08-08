@@ -31,7 +31,7 @@ class PubProc(Process):
 
         inner1 = Inner(short1=self.sn, double1=222)
         inner2 = Inner(short1=777, double1=333)
-        # time.sleep(0.5)
+        time.sleep(0.5)
         data = gen_info.topic_data_class(longValue=self.sn, booleanValue=True, charValue='a', stringValue='Fire!',
                                          seq1=[inner1, inner2], color1=Color.Red)
         writer.write(data)
