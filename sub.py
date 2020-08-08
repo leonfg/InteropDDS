@@ -19,7 +19,7 @@ class DataAvailableListener(Listener):
 
 if __name__ == "__main__":
 
-    qp = QosProvider('file://TestQoS.xml', 'DDS TestQosProfile')
+    qp = QosProvider('file://DDS_DefaultQoS_All.xml', 'DDS DefaultQosProfile')
 
     dp = DomainParticipant(qos = qp.get_participant_qos())
 
@@ -31,7 +31,7 @@ if __name__ == "__main__":
 
     readerQos = qp.get_reader_qos()
     reader = sub.create_datareader(topic, readerQos)
-    reader2 = sub.create_datareader(topic, readerQos, DataAvailableListener())
+    # reader2 = sub.create_datareader(topic, readerQos, DataAvailableListener())
 
     waitset = WaitSet()
     rc = ReadCondition(reader, DDSMaskUtil.all_samples())
